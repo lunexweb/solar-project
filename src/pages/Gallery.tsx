@@ -7,6 +7,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
+// Placeholder images - replace with actual images
+const gallery1 = "https://images.unsplash.com/photo-1509391366360-2e959c7967f0?w=800&h=600&fit=crop&crop=center";
+const gallery2 = "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop&crop=center";
+const gallery3 = "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&h=600&fit=crop&crop=center";
+const gallery4 = "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop&crop=center";
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
