@@ -7,11 +7,19 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
-// Placeholder images - replace with actual images
-const gallery1 = "https://images.unsplash.com/photo-1509391366360-2e959c7967f0?w=800&h=600&fit=crop&crop=center";
-const gallery2 = "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop&crop=center";
-const gallery3 = "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&h=600&fit=crop&crop=center";
-const gallery4 = "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop&crop=center";
+// Real SolarQuench project images from Cloudinary
+const gallery1 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961787/WhatsApp_Image_2025-10-19_at_19.55.48_3_zadswm.jpg";
+const gallery2 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961786/WhatsApp_Image_2025-10-19_at_19.55.46_3_dijati.jpg";
+const gallery3 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961781/WhatsApp_Image_2025-10-19_at_19.55.59_2_dbk78f.jpg";
+const gallery4 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961794/WhatsApp_Image_2025-10-19_at_19.56.00_3_z3kojq.jpg";
+const gallery5 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961781/WhatsApp_Image_2025-10-19_at_19.55.46_2_eomcwy.jpg";
+const gallery6 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961780/WhatsApp_Image_2025-10-19_at_19.55.59_1_l42chn.jpg";
+const gallery7 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961792/WhatsApp_Image_2025-10-19_at_19.55.51_qbzyvp.jpg";
+const gallery8 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961799/WhatsApp_Image_2025-10-19_at_19.55.56_1_wv9shi.jpg";
+const gallery9 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961800/WhatsApp_Image_2025-10-19_at_19.55.54_bry9we.jpg";
+const gallery10 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961802/WhatsApp_Image_2025-10-19_at_19.55.57_ea9t2n.jpg";
+const gallery11 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961799/WhatsApp_Image_2025-10-19_at_19.55.56_foti41.jpg";
+const gallery12 = "https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760961796/WhatsApp_Image_2025-10-19_at_19.55.54_1_axwffl.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -42,16 +50,52 @@ const Gallery = () => {
       category: "Installation",
     },
     {
-      image: gallery1,
+      image: gallery5,
       title: "Urban Solar Solution",
       description: "Compact system for city living",
       category: "Residential",
     },
     {
-      image: gallery2,
+      image: gallery6,
       title: "Industrial Scale Project",
       description: "Mega-watt solar installation",
       category: "Commercial",
+    },
+    {
+      image: gallery7,
+      title: "Solar Panel Array",
+      description: "Multiple panel installation project",
+      category: "Technology",
+    },
+    {
+      image: gallery8,
+      title: "Green Energy Solution",
+      description: "Sustainable power generation",
+      category: "Commercial",
+    },
+    {
+      image: gallery9,
+      title: "Advanced Solar System",
+      description: "State-of-the-art solar technology",
+      category: "Technology",
+    },
+    {
+      image: gallery10,
+      title: "Eco-Friendly Installation",
+      description: "Environmentally conscious solar setup",
+      category: "Residential",
+    },
+    {
+      image: gallery11,
+      title: "Solar Power Station",
+      description: "Large-scale renewable energy project",
+      category: "Commercial",
+    },
+    {
+      image: gallery12,
+      title: "Modern Solar Array",
+      description: "Cutting-edge solar panel system",
+      category: "Technology",
     },
   ];
 
@@ -106,7 +150,7 @@ const Gallery = () => {
       {/* Gallery Grid */}
       <section className="py-20 bg-background" data-scroll-section>
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects.map((project, index) => (
               <Card 
                 key={index}
@@ -115,12 +159,20 @@ const Gallery = () => {
                 data-scroll
                 data-scroll-speed={0.3 + (index % 3) * 0.2}
               >
-                <div className="relative overflow-hidden aspect-square">
+                <div className="relative overflow-hidden aspect-[4/3]">
                   <img 
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
+                  
+                  {/* Watermark - Always visible */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="bg-black/20 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
+                      <span className="text-white font-bold text-lg tracking-wide">SOLARQUENCH</span>
+                    </div>
+                  </div>
+                  
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-secondary-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -139,13 +191,32 @@ const Gallery = () => {
 
       {/* Image Dialog */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl p-0 bg-transparent border-none">
+        <DialogContent className="max-w-3xl max-h-[90vh] p-0 bg-background border shadow-2xl">
           {selectedImage && (
-            <img 
-              src={selectedImage}
-              alt="Project detail"
-              className="w-full h-auto rounded-lg"
-            />
+            <div className="relative">
+              {/* Close Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10"
+                onClick={() => setSelectedImage(null)}
+              >
+                <X className="w-5 h-5" />
+              </Button>
+              
+              <img 
+                src={selectedImage}
+                alt="Project detail"
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              />
+              
+              {/* Watermark - Always visible in dialog */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="bg-black/30 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/30">
+                  <span className="text-white font-bold text-2xl tracking-wide">SOLARQUENCH</span>
+                </div>
+              </div>
+            </div>
           )}
         </DialogContent>
       </Dialog>
