@@ -194,16 +194,6 @@ const Gallery = () => {
         <DialogContent className="max-w-3xl max-h-[90vh] p-0 bg-background border shadow-2xl">
           {selectedImage && (
             <div className="relative">
-              {/* Close Button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10"
-                onClick={() => setSelectedImage(null)}
-              >
-                <X className="w-5 h-5" />
-              </Button>
-              
               <img 
                 src={selectedImage}
                 alt="Project detail"
